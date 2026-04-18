@@ -457,6 +457,32 @@
       </a>
     </div>
   </div>
+
+  <!-- Visitor Counter -->
+  <div style="text-align:center; margin-top:36px; padding-top:28px; border-top:1px solid var(--border);">
+    <div style="font-size:.72rem; letter-spacing:.22em; color:var(--gold-dim); margin-bottom:10px;">— 訪問者数 —</div>
+    <div id="visitor-display" style="
+      display:inline-flex; align-items:center; gap:10px;
+      background:rgba(255,252,235,.8);
+      border:1px solid var(--border);
+      border-radius:50px;
+      padding:10px 24px;
+      box-shadow:0 2px 12px rgba(184,134,11,.12);
+      backdrop-filter:blur(4px);
+    ">
+      <span style="font-size:1.1rem;">👣</span>
+      <span id="visitor-text" style="
+        font-family:'Shippori Mincho',serif;
+        font-size:.95rem;
+        color:var(--text-main);
+        letter-spacing:.08em;
+        font-weight:600;
+      ">読み込み中...</span>
+    </div>
+    <div style="font-size:.65rem; color:var(--text-light); margin-top:8px; letter-spacing:.1em;">
+      ※ 総訪問者数
+    </div>
+  </div>
 </div>
 
 <!-- ═══ PROFILE ═══ -->
@@ -696,6 +722,7 @@
     }
 
     if (landed) return;
+    if (paused) { requestAnimationFrame(frame); return; }
 
     // Reset land coords if scrolled back up
     if (!isNearBottom()) {
@@ -758,13 +785,43 @@
     requestAnimationFrame(frame);
   }
 
+  var paused = false;
+  var pauseVx = 0, pauseVy = 0, pauseSpin = 0;
+
+  el.addEventListener('mouseenter', function(){
+    if (landed) return;
+    paused = true;
+    // Save velocity
+    pauseVx = vx; pauseVy = vy; pauseSpin = spin;
+    vx = 0; vy = 0; spin = 0;
+    // Gentle bounce effect on hover
+    scaleX = 1.2; scaleY = 1.2;
+    el.style.boxShadow = '0 8px 32px rgba(184,134,11,0.7), 0 0 20px rgba(255,200,50,0.5)';
+  });
+
+  el.addEventListener('mouseleave', function(){
+    if (landed) return;
+    paused = false;
+    // Restore velocity with a little extra kick
+    vx = pauseVx * (0.9 + Math.random()*0.4);
+    vy = pauseVy * (0.9 + Math.random()*0.4);
+    spin = pauseSpin * (Math.random() < 0.5 ? 1 : -1);
+    if (Math.sqrt(vx*vx+vy*vy) < 1.5) {
+      vx = rand(2,5)*(Math.random()<0.5?1:-1);
+      vy = rand(2,5)*(Math.random()<0.5?1:-1);
+    }
+    el.style.boxShadow = '0 6px 24px rgba(184,134,11,0.5)';
+  });
+
   el.addEventListener('click', function(){
     if (landed) return;
+    paused = false;
     vx = rand(6,14)*(Math.random()<0.5?1:-1);
     vy = rand(6,14)*(Math.random()<0.5?1:-1);
     spin = rand(10,25)*(Math.random()<0.5?1:-1);
     zoomTarget = rand(1.8,2.5);
     excitedTimer = 150;
+    el.style.boxShadow = '0 6px 24px rgba(184,134,11,0.5)';
   });
 
   el.addEventListener('touchstart', function(e){
@@ -781,6 +838,46 @@
 })();
 </script>
 
+
+
+<script>
+// Visitor counter using countapi.xyz (free, no signup)
+(function() {
+  var nameSpace = 'gg55gogo-github-io';
+  var key = 'GG55-visitors';
+  var display = document.getElementById('visitor-text');
+  if (!display) return;
+
+  // Hit the counter (increments on each visit)
+  fetch('https://api.countapi.xyz/hit/' + nameSpace + '/' + key)
+    .then(function(res) { return res.json(); })
+    .then(function(data) {
+      var count = data.value;
+      if (count && count > 0) {
+        // Animated number count-up
+        var start = Math.max(1, count - 30);
+        var current = start;
+        var step = Math.ceil((count - start) / 25);
+        var timer = setInterval(function() {
+          current += step;
+          if (current >= count) {
+            current = count;
+            clearInterval(timer);
+          }
+          display.textContent = 'あなたは ' + current.toLocaleString() + ' 人目の訪問者';
+        }, 40);
+      } else {
+        display.textContent = 'あなたは 1 人目の訪問者';
+      }
+    })
+    .catch(function() {
+      // Fallback: localStorage based counter
+      var local = parseInt(localStorage.getItem('gg55_visits') || '0') + 1;
+      localStorage.setItem('gg55_visits', local);
+      display.textContent = 'ご訪問ありがとうございます！';
+    });
+})();
+</script>
 
 </body>
 </html>
