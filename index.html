@@ -878,6 +878,111 @@
     });
 })();
 </script>
+<!--
+==========================================================
+  アバンdeモーダン「夢の音」BGM 埋め込みコード
+  GG工業 https://gg55gogo.github.io/GG55/ 用
 
+  【手順】
+  index.html に以下のコードを貼り付けてください。
+
+  ① STEP 1 → </body> の直前に貼る
+  ② STEP 2 → 同じく </body> の直前に貼る（①の後）
+
+==========================================================
+-->
+
+<!-- ========== STEP 1: HTML（ボタン＋非表示プレーヤー） ========== -->
+
+<!-- BGM 用の非表示 YouTube プレーヤー -->
+
+<div id="yt-bgm" style="position:fixed;width:1px;height:1px;opacity:0;pointer-events:none;"></div>
+
+<!-- 右下に浮かぶBGMボタン -->
+
+<div id="bgm-widget" style="
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+">
+  <button id="bgm-btn" onclick="toggleBGM()" title="BGM ON/OFF" style="
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #c8a96e;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(200,169,110,0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+  " onmouseenter="this.style.transform='scale(1.1)'" onmouseleave="this.style.transform='scale(1)'">
+    <!-- 音符アイコン（ON時）/ ミュートアイコン（OFF時）はJSで切り替え -->
+    <svg id="icon-on" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a1208" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+      <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+      <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+    </svg>
+    <svg id="icon-off" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a1208" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+      <line x1="23" y1="9" x2="17" y2="15"/>
+      <line x1="17" y1="9" x2="23" y2="15"/>
+    </svg>
+  </button>
+  <span id="bgm-label" style="
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    color: #888;
+    text-transform: uppercase;
+    font-family: monospace;
+  ">BGM</span>
+</div>
+
+<!-- ========== STEP 2: JavaScript ========== -->
+
+<script src="https://www.youtube.com/iframe_api"></script>
+
+<script>
+  var ytPlayer = null;
+  var bgmPlaying = false;
+
+  // YouTube API 準備完了時に呼ばれる（関数名は変更不可）
+  function onYouTubeIframeAPIReady() {
+    ytPlayer = new YT.Player('yt-bgm', {
+      videoId: 'TnnxgblhRwE',   // アバンdeモーダン「夢の音」
+      playerVars: {
+        autoplay: 0,
+        loop: 1,
+        playlist: 'TnnxgblhRwE', // loop=1 に必須
+        controls: 0,
+        mute: 0
+      }
+    });
+  }
+
+  function toggleBGM() {
+    if (!ytPlayer) return;
+
+    if (!bgmPlaying) {
+      ytPlayer.playVideo();
+      bgmPlaying = true;
+      document.getElementById('icon-on').style.display  = 'block';
+      document.getElementById('icon-off').style.display = 'none';
+      document.getElementById('bgm-label').style.color  = '#c8a96e';
+    } else {
+      ytPlayer.pauseVideo();
+      bgmPlaying = false;
+      document.getElementById('icon-on').style.display  = 'none';
+      document.getElementById('icon-off').style.display = 'block';
+      document.getElementById('bgm-label').style.color  = '#888';
+    }
+  }
+</script>
 </body>
 </html>
