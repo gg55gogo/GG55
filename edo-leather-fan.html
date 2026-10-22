@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#211d19">
+  <link rel="icon" type="image/jpeg" href="./kazuharu-logo.jpeg">
+  <title>江戸革扇子｜Kazuharu1603Japan</title>
+  <meta name="description" content="伝統と未来をつなぐ。溶接職人としてものづくりに向き合ってきた和治が、江戸革扇子に込める物語。">
+  <style>
+    :root {
+      --ink: #211d19;
+      --paper: #f5efe4;
+      --gold: #c9a96e;
+      --red: #9b2638;
+      --muted: #6f6559;
+      --line: #d9cbb5;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: var(--paper); color: var(--ink);
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
+      line-height: 1.95; letter-spacing: .04em;
+    }
+    a { color: inherit; }
+    .wrap { width: min(100% - 36px, 820px); margin: 0 auto; }
+    .hero {
+      min-height: 80vh; display: grid; align-items: end; position: relative;
+      color: #fff; background: var(--ink); overflow: hidden;
+    }
+    .hero img {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; opacity: .72;
+    }
+    .hero::after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(0deg, rgba(20,16,13,.94), rgba(20,16,13,.08) 78%);
+    }
+    .hero-content { position: relative; z-index: 1; padding: 72px 0 56px; }
+    .brand { color: #e5c98e; font: 12px/1.5 sans-serif; letter-spacing: .22em; }
+    .brand-logo { display:block; width:88px; height:88px; object-fit:contain; border-radius:50%; margin-bottom:18px; background:rgba(255,255,255,.92); padding:4px; box-shadow:0 4px 18px rgba(0,0,0,.18); }
+    h1 { font-size: clamp(2.6rem, 9vw, 5rem); line-height: 1.2; margin: 18px 0; font-weight: 500; }
+    .hero-sub { font-size: clamp(1rem, 3.4vw, 1.35rem); margin: 0; }
+    .section { padding: 68px 0; border-bottom: 1px solid var(--line); }
+    .eyebrow { color: var(--red); font: 11px/1.5 sans-serif; letter-spacing: .2em; }
+    h2 { font-size: clamp(1.55rem, 5vw, 2.25rem); line-height: 1.55; font-weight: 500; margin: 10px 0 22px; }
+    p { margin: 0 0 1.15em; }
+    .lead { font-size: 1.08rem; }
+    .quote {
+      margin: 28px 0; padding: 20px 22px; border-left: 3px solid var(--gold);
+      background: rgba(255,255,255,.38); font-size: 1.1rem;
+    }
+    .photo { width: 100%; display: block; margin: 28px 0; border-radius: 2px; }
+    .story-number { color: var(--gold); font-size: 2.2rem; line-height: 1; }
+    .closing { background: var(--ink); color: #f8f0e3; padding: 64px 0; }
+    .closing h2 { color: #e5c98e; }
+    .links { display: grid; gap: 12px; margin-top: 28px; }
+    .link {
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      padding: 17px 20px; text-decoration: none; border: 1px solid #8d7b60;
+      border-radius: 3px; transition: background .2s ease;
+    }
+    .link:hover { background: rgba(255,255,255,.08); }
+    .link strong { display: block; font-size: 1rem; font-weight: 500; }
+    .link small { display: block; color: #cfc1ad; font: 12px/1.7 sans-serif; margin-top: 3px; }
+    .arrow { color: #e5c98e; font-size: 1.2rem; }
+    footer { text-align: center; padding: 24px 16px; color: #cfc1ad; background: var(--ink); font: 11px/1.8 sans-serif; letter-spacing: .1em; }
+    @media (min-width: 700px) {
+      .hero { min-height: 720px; }
+      .section { padding: 88px 0; }
+      .story-copy { max-width: 650px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <img src="./edo-leather-fan-welder.png.PNG" alt="江戸革扇子と溶接職人の物語">
+    <div class="wrap hero-content">
+      <img class="brand-logo" src="./kazuharu-logo.jpeg" alt="和治 1603 Japan 公式ロゴ">
+      <div class="brand">KAZUHARU 1603 JAPAN</div>
+      <h1>江戸革扇子</h1>
+      <p class="hero-sub">伝統と未来をつなぐ。</p>
+      <p>失われゆく日本の技術を、未来へ。</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="wrap story-copy">
+        <div class="eyebrow">THE CRAFT / 01</div>
+        <h2>時を越えて、<br>受け継がれる手仕事。</h2>
+        <p class="lead">江戸扇子を作れる職人は、世界で5人。</p>
+        <p>長い時間をかけて磨かれてきた技。その技を受け継ぐ人が少なくなっている現実があります。</p>
+        <p>技術は、そこにあるだけでは未来へ残らない。知り、関心を持ち、手に取り、誰かに伝える。その一つひとつが、次の時代へつながる力になると考えています。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap story-copy">
+        <div class="eyebrow">MY STORY / 02</div>
+        <h2>職人になりたくて、<br>溶接職人になった私。</h2>
+        <p>私は、ものづくりの現場で長く技術と向き合ってきました。</p>
+        <p>手を動かし、工夫し、形にする。簡単ではないからこそ、そこに職人の誇りがある。</p>
+        <p>江戸革扇子と溶接。分野も、使う道具も違います。それでも、技術を磨き、誰かの手に届くものを生み出す姿勢には、通じるものがあると感じています。</p>
+        <div class="quote">分野は違っても、応援したい。</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap story-copy">
+        <div class="eyebrow">TSUGARU × MIKAWA / 03</div>
+        <h2>津軽と三河。</h2>
+        <p class="lead">時を越えてつながる、三つの土地と一本の扇子の物語。</p>
+        <p>1603年から続く歴史。そして今、津軽と三河を結び、伝統と未来をつなぐ挑戦へ。</p>
+        <p>その背景にある物語を、もう少し詳しく。</p>
+        <p style="margin-top:28px;">
+          <a href="https://kazuharu1603.jp/story" target="_blank" rel="noopener noreferrer"
+             style="display:inline-block; padding:13px 22px; border:1px solid #9b2638; color:#9b2638; text-decoration:none; border-radius:2px;">
+            詳しくはECサイトの物語（ストーリー）へ →
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="wrap">
+        <div class="eyebrow">CONTINUE THE STORY</div>
+        <h2>物語の続きを、<br>あなたと。</h2>
+        <p>知ることから、応援することから。<br>それぞれの場所から、未来につながる一歩を。</p>
+        <div class="links">
+          <a class="link" href="https://www.instagram.com/kazuharu1603japan/" target="_blank" rel="noopener noreferrer">
+            <span><strong>Instagram</strong><small>ものづくりと物語を知る</small></span><span class="arrow">↗</span>
+          </a>
+          <a class="link" href="https://kazuharu1603.jp/" target="_blank" rel="noopener noreferrer">
+            <span><strong>購入はこちら｜ECサイト</strong><small>江戸革扇子の商品を見る</small></span><span class="arrow">↗</span>
+          </a>
+          <a class="link" href="https://lin.ee/vV2eFlL" target="_blank" rel="noopener noreferrer">
+            <span><strong>公式LINE</strong><small>お問い合わせ・ご相談</small></span><span class="arrow">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>KAZUHARU 1603 JAPAN · 伝統と未来をつなぐ</footer>
+</body>
+</html>
