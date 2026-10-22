@@ -66,6 +66,31 @@
     .link small { display: block; color: #cfc1ad; font: 12px/1.7 sans-serif; margin-top: 3px; }
     .arrow { color: #e5c98e; font-size: 1.2rem; }
     footer { text-align: center; padding: 24px 16px; color: #cfc1ad; background: var(--ink); font: 11px/1.8 sans-serif; letter-spacing: .1em; }
+    /* 扇子をモチーフにした固定ホームボタン（濃藍×金） */
+    .home-button {
+      position: fixed; left: 14px; top: 12px; right: auto; bottom: auto; z-index: 1000;
+      width: 112px; height: 88px; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 3px;
+      padding: 8px 8px 15px; color: #f8f0e3;
+      background: linear-gradient(145deg, rgba(24,43,68,.98), rgba(10,24,42,.98));
+      border: 1px solid #d7b56d; border-radius: 48% 48% 8% 8% / 34% 34% 8% 8%;
+      clip-path: polygon(50% 100%, 4% 27%, 1% 19%, 5% 11%, 16% 5%, 32% 2%, 50% 1%, 68% 2%, 84% 5%, 95% 11%, 99% 19%, 96% 27%);
+      text-decoration: none; font: 600 13px/1.2 sans-serif;
+      filter: drop-shadow(0 3px 5px rgba(0,0,0,.35));
+    }
+    .home-button::before {
+      content: ""; position: absolute; inset: 4px 5px 7px;
+      border: 1px solid rgba(215,181,109,.75); border-radius: 48% 48% 8% 8% / 34% 34% 8% 8%;
+      clip-path: polygon(50% 100%, 4% 27%, 1% 19%, 5% 11%, 16% 5%, 32% 2%, 50% 1%, 68% 2%, 84% 5%, 95% 11%, 99% 19%, 96% 27%);
+      pointer-events: none;
+    }
+    .home-button .home-icon { font-size: 25px; line-height: 1; color: #e5c98e; }
+    .home-button .home-label { position: relative; z-index: 1; white-space: nowrap; }
+    .home-button:focus-visible { outline: 3px solid #e5c98e; outline-offset: 3px; }
+    @media (max-width: 420px) {
+      .home-button { left: 8px; top: 8px; right: auto; bottom: auto; width: 100px; height: 80px; font-size: 12px; }
+      .home-button .home-icon { font-size: 23px; }
+    }
     @media (min-width: 700px) {
       .hero { min-height: 720px; }
       .section { padding: 88px 0; }
@@ -143,5 +168,6 @@
     </section>
   </main>
   <footer>KAZUHARU 1603 JAPAN · 伝統と未来をつなぐ</footer>
+  <a class="home-button" href="./" aria-label="GGiホームページに戻る"><span class="home-icon" aria-hidden="true">⌂</span><span class="home-label">ホームへ</span></a>
 </body>
 </html>
