@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>13の徳を学ぶ場 TeamGGi｜ご案内</title>
+<meta name="description" content="フランクリンの13の徳を、1週間に1つずつ。日々の気づきを仲間と分かち合うTeamGGiのご案内。">
+<style>
+:root{
+  --green:#1d3a22; --green2:#2c5233; --gold:#b08d3c; --gold-l:#d9bd7a;
+  --paper:#f4ebd8; --paper2:#ebdfc4; --ink:#2a2118; --wood:#7a5a35;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --paper:#1b1a14; --paper2:#26231a; --ink:#efe6d2; --wood:#c9a974; --green:#e4d3a0; --green2:#cdb97f; }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Hiragino Mincho ProN","Yu Mincho","Noto Serif JP",serif;
+  line-height:1.95; font-size:17px;
+  padding:env(safe-area-inset-top,0) 0 calc(96px + env(safe-area-inset-bottom,0));
+}
+.wrap{max-width:620px;margin:0 auto;padding:0 22px}
+header.hero{
+  background:linear-gradient(160deg,#16301b 0%,#2c5233 100%);
+  color:#f4ebd8; text-align:center; padding:84px 22px 48px;
+  border-bottom:4px solid var(--gold);
+}
+.hero small{display:block;letter-spacing:.2em;color:var(--gold-l);font-size:14px;margin-bottom:14px}
+.hero h1{margin:0;font-size:clamp(34px,10vw,52px);line-height:1.3;font-weight:700;letter-spacing:.04em}
+.hero h1 span{display:block;font-size:.62em;color:var(--gold-l);letter-spacing:.08em;margin-top:6px}
+.hero p{margin:22px auto 0;max-width:22em;font-size:16px;color:#e9dfc6}
+section{padding:44px 0 8px}
+h2{
+  font-size:22px; margin:0 0 18px; color:var(--green); font-weight:700;
+  padding-left:14px; border-left:5px solid var(--gold); line-height:1.5;
+}
+p{margin:0 0 1.1em}
+.quote{
+  background:var(--paper2); border-radius:6px; padding:22px 22px; margin:22px 0;
+  font-size:19px; line-height:1.8; text-align:center; color:var(--green);
+  border-top:2px solid var(--gold); border-bottom:2px solid var(--gold);
+}
+ol.virtues{list-style:none;margin:20px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+ol.virtues li{
+  display:flex;align-items:center;gap:10px;background:var(--paper2);
+  padding:10px 12px;border-radius:4px;font-size:17px;
+}
+ol.virtues b{
+  flex:none;width:28px;height:28px;border-radius:50%;background:var(--green);color:var(--paper);
+  display:grid;place-items:center;font-size:13px;font-weight:700;
+}
+@media (prefers-color-scheme: dark){ ol.virtues b{color:#1b1a14} }
+.note{font-size:15px;color:var(--wood)}
+ul.flow{list-style:none;margin:0;padding:0;counter-reset:s}
+ul.flow li{counter-increment:s;position:relative;padding:4px 0 18px 46px}
+ul.flow li::before{
+  content:counter(s);position:absolute;left:0;top:4px;width:32px;height:32px;border-radius:50%;
+  background:var(--gold);color:#fff;display:grid;place-items:center;font-weight:700;
+}
+ul.flow li::after{content:"";position:absolute;left:15px;top:38px;bottom:2px;width:2px;background:var(--gold-l)}
+ul.flow li:last-child::after{display:none}
+.cta{
+  display:block;text-align:center;text-decoration:none;font-weight:700;font-size:19px;letter-spacing:.04em;
+  background:#1f5a2c;color:#fff;border:2px solid var(--gold);border-radius:999px;padding:16px 20px;
+}
+.cta:focus-visible{outline:3px solid var(--gold-l);outline-offset:3px}
+.cta:active{transform:scale(.98)}
+.bar{
+  position:fixed;left:0;right:0;bottom:0;z-index:10;
+  padding:12px 22px calc(12px + env(safe-area-inset-bottom,0));
+  background:linear-gradient(to top,var(--paper) 70%,transparent);
+}
+.bar .cta{max-width:576px;margin:0 auto;box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.home{
+  position:fixed;top:calc(10px + env(safe-area-inset-top,0));left:12px;z-index:20;
+  display:inline-flex;align-items:center;gap:10px;text-decoration:none;
+  font-size:15px;font-weight:700;color:#1d3a22;background:#f4ebd8;
+  border:1.5px solid var(--gold);border-radius:999px;padding:6px 16px 6px 12px;
+  box-shadow:0 3px 10px rgba(0,0,0,.3);
+}
+.home img{height:26px;width:auto;display:block}
+.home:focus-visible{outline:3px solid var(--gold-l);outline-offset:3px}
+.home:active{transform:scale(.97)}
+footer{text-align:center;font-size:14px;color:var(--wood);padding:36px 22px 0}
+footer a{color:inherit}
+</style>
+</head>
+<body>
+
+<a class="home" href="index.html"><img src="ggi-logo.png" alt="GGi" width="57" height="26"><span>ホームページに戻る</span></a>
+
+<header class="hero">
+  <small>Good Human Inspire</small>
+  <h1>13の徳を学ぶ場<span>TeamGGi</span></h1>
+  <p>日々の気づきや学びを仲間と共有し、共に成長していく場所です。</p>
+</header>
+
+<main class="wrap">
+
+  <section>
+    <h2>応援する人が、応援される。</h2>
+    <p>TeamGGiは、上も下もない、対等な仲間のチームです。誰かが挑戦するときは、みんなで応援する。その応援が、いつか自分に返ってくる。そんな循環のある場所を目指しています。</p>
+    <div class="quote">一本の骨では風は起こせない。<br>お互いを応援し、響き合う。</div>
+  </section>
+
+  <section>
+    <h2>13の徳とは</h2>
+    <p>アメリカ建国の父、ベンジャミン・フランクリンが自らを磨くために実践した13の徳目です。ここでは1週間に1つの徳を意識して過ごし、13週で一巡します。</p>
+    <ol class="virtues">
+      <li><b>1</b>節制</li>
+      <li><b>2</b>沈黙</li>
+      <li><b>3</b>規律</li>
+      <li><b>4</b>決断</li>
+      <li><b>5</b>節約</li>
+      <li><b>6</b>勤勉</li>
+      <li><b>7</b>誠実</li>
+      <li><b>8</b>正義</li>
+      <li><b>9</b>中庸</li>
+      <li><b>10</b>清潔</li>
+      <li><b>11</b>平静</li>
+      <li><b>12</b>純潔</li>
+      <li><b>13</b>謙譲</li>
+    </ol>
+    <p class="note" style="margin-top:14px">完璧を目指す場ではありません。1週間、ひとつの徳を意識して、気づいたことを仲間と分かち合います。</p>
+  </section>
+
+  <section>
+    <h2>参加のしかた</h2>
+    <ul class="flow">
+      <li>下のボタンから、LINEオープンチャットを開く</li>
+      <li>「参加」をタップして、チャットに入る</li>
+      <li>今週の徳について、気づいたことを共有する</li>
+    </ul>
+    <a class="cta" href="https://line.me/ti/g2/eawa5POyUAcVW-AXg0CFDdULXCusdpVDGy8Wjw?utm_source=invitation&amp;utm_medium=link_copy&amp;utm_campaign=default" target="_blank" rel="noopener">オープンチャットに参加する</a>
+  </section>
+
+</main>
+
+<footer>
+  主宰：齊藤 和治（GG工業）<br>
+  <a href="./">← GG工業トップへ戻る</a>
+</footer>
+
+<div class="bar">
+  <a class="cta" href="https://line.me/ti/g2/eawa5POyUAcVW-AXg0CFDdULXCusdpVDGy8Wjw?utm_source=invitation&amp;utm_medium=link_copy&amp;utm_campaign=default" target="_blank" rel="noopener">オープンチャットに参加する</a>
+</div>
+
+</body>
+</html>
