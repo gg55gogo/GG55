@@ -24,7 +24,7 @@ body{
 .wrap{max-width:620px;margin:0 auto;padding:0 22px}
 header.hero{
   background:linear-gradient(160deg,#16301b 0%,#2c5233 100%);
-  color:#f4ebd8; text-align:center; padding:84px 22px 48px;
+  color:#f4ebd8; text-align:center; padding:92px 22px 48px;
   border-bottom:4px solid var(--gold);
 }
 .hero small{display:block;letter-spacing:.2em;color:var(--gold-l);font-size:14px;margin-bottom:14px}
@@ -74,13 +74,11 @@ ul.flow li:last-child::after{display:none}
 }
 .bar .cta{max-width:576px;margin:0 auto;box-shadow:0 6px 18px rgba(0,0,0,.25)}
 .home{
-  position:fixed;top:calc(10px + env(safe-area-inset-top,0));left:12px;z-index:20;
-  display:inline-flex;align-items:center;gap:10px;text-decoration:none;
-  font-size:15px;font-weight:700;color:#1d3a22;background:#f4ebd8;
-  border:1.5px solid var(--gold);border-radius:999px;padding:6px 16px 6px 12px;
-  box-shadow:0 3px 10px rgba(0,0,0,.3);
+  position:fixed;top:calc(8px + env(safe-area-inset-top,0));left:8px;z-index:20;
+  display:block;width:208px;max-width:60vw;
+  filter:drop-shadow(0 3px 6px rgba(0,0,0,.35));
 }
-.home img{height:26px;width:auto;display:block}
+.home img{width:100%;height:auto;display:block}
 .home:focus-visible{outline:3px solid var(--gold-l);outline-offset:3px}
 .home:active{transform:scale(.97)}
 footer{text-align:center;font-size:14px;color:var(--wood);padding:36px 22px 0}
@@ -89,7 +87,7 @@ footer a{color:inherit}
 </head>
 <body>
 
-<a class="home" href="index.html"><img src="ggi-logo.png" alt="GGi" width="57" height="26"><span>ホームページに戻る</span></a>
+<a class="home" href="index.html" aria-label="ホームへ戻る"><img src="home-button-wide.png" alt="GGi ホームへ戻る" width="640" height="157"></a>
 
 <header class="hero">
   <small>Good Human Inspire</small>
