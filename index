@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GG工業 — 動いた者だけが、次の景色を見る。</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=Shippori+Mincho:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #b8860b;
+    --gold-light: #d4a017;
+    --gold-dim: #8a6a00;
+    --text-main: #2c2010;
+    --text-sub: #5a4a2a;
+    --text-light: #7a6a4a;
+    --border: rgba(184,134,11,0.28);
+    --card-bg: rgba(255,252,240,0.88);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: 'Noto Serif JP', serif;
+    line-height: 1.8;
+    overflow-x: hidden;
+    color: var(--text-main);
+    /* Summer morning sky */
+    background:
+      linear-gradient(180deg,
+        #ffe080 0%,
+        #ffb347 6%,
+        #ff9060 10%,
+        #ffb880 14%,
+        #87ceeb 28%,
+        #aaddee 48%,
+        #c8eef8 68%,
+        #e0f4fc 85%,
+        #f4faff 100%
+      );
+    background-attachment: fixed;
+    min-height: 100vh;
+    position: relative;
+  }
+  /* ものづくり SVG background */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%271200%27%20height%3D%27900%27%20opacity%3D%270.13%27%3E%0A%20%20%3C%21--%20Gear%20large%20left%20--%3E%0A%20%20%3Cg%20transform%3D%27translate%2880%2C120%29%27%3E%0A%20%20%20%20%3Ccircle%20cx%3D%270%27%20cy%3D%270%27%20r%3D%2770%27%20fill%3D%27none%27%20stroke%3D%27%2523b8860b%27%20stroke-width%3D%278%27/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%270%27%20cy%3D%270%27%20r%3D%2742%27%20fill%3D%27none%27%20stroke%3D%27%2523b8860b%27%20stroke-width%3D%275%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27-10%27%20y%3D%27-82%27%20width%3D%2720%27%20height%3D%2724%27%20rx%3D%274%27%20fill%3D%27%2523b8860b%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27-10%27%20y%3D%2758%27%20width%3D%2720%27%20height%3D%2724%27%20rx%3D%274%27%20fill%3D%27%2523b8860b%27/%3E%0A%20%20%20%20%3Crect%20x%3D%2758%27%20y%3D%27-10%27%20width%3D%2724%27%20height%3D%2720%27%20rx%3D%274%27%20fill%3D%27%2523b8860b%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27-82%27%20y%3D%27-10%27%20width%3D%2724%27%20height%3D%2720%27%20rx%3D%274%27%20fill%3D%27%2523b8860b%27/%3E%0A%20%20%20%20%3Crect%20x%3D%2738%27%20y%3D%27-74%27%20width%3D%2720%27%20height%3D%2724%27%20rx%3D%274%27%20transform%3D%27rotate%2845%2048%20-62%29%27%20%20fill%3D%27%2523b8860b%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27-58%27%20y%3D%27-74%27%20width%3D%2720%27%20height%3D%2724%27%20rx%3D%274%27%20transform%3D%27rotate%28-45%20-48%20-62%29%27%20fill%3D%27%2523b8860b%27/%3E%0A%20%20%20%20%3Crect%20x%3D%2738%27%20y%3D%2750%27%20width%3D%2720%27%20height%3D%2724%27%20rx%3D%274%27%20transform%3D%27rotate%28-45%2048%2062%29%27%20fill%3D%27%2523b8860b%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27-58%27%20y%3D%2750%27%20width%3D%2720%27%20height%3D%2724%27%20rx%3D%274%27%20transform%3D%27rotate%2845%20-48%2062%29%27%20fill%3D%27%2523b8860b%27/%3E%0A%20%20%3C/g%3E%0A%20%20%3C%21--%20Gear%20small%20right%20top%20--%3E%0A%20%20%3Cg%20transform%3D%27translate%281100%2C80%29%27%3E%0A%20%20%20%20%3Ccircle%20cx%3D%270%27%20cy%3D%270%27%20r%3D%2745%27%20fill%3D%27none%27%20stroke%3D%27%2523b8860b%27%20stroke-width%3D%276%27/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%270%27%20cy%3D%270%27%20r%3D%2726%27%20fill%3D%27none%27%20stroke%3D%27%2523b8860b%27%20stroke-width%3D%274%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27-7%27%20y%3D%27-53%27%20width%3D%2714%27%20height%3D%2718%27%20rx%3D%273%27%20fill%3D%27%2523b8860b%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27-7%27%20y%3D%2735%27%20width%3D%2714%27%20height%3D%2718%27%20rx%3D%273%27%20fill%3D%27%2523b8860b%27/%3E%0A%20%20%20%20%3Crect%20x%3D%2735%27%20y%3D%27-7%27%20width%3D%2718%27%20height%3D%2714%27%20rx%3D%273%27%20fill%3D%27%2523b8860b%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27-53%27%20y%3D%27-7%27%20width%3D%2718%27%20height%3D%2714%27%20rx%3D%273%27%20fill%3D%27%2523b8860b%27/%3E%0A%20%20%20%20%3Crect%20x%3D%2722%27%20y%3D%27-49%27%20width%3D%2714%27%20height%3D%2718%27%20rx%3D%273%27%20transform%3D%27rotate%2845%29%27%20fill%3D%27%2523b8860b%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27-36%27%20y%3D%27-49%27%20width%3D%2714%27%20height%3D%2718%27%20rx%3D%273%27%20transform%3D%27rotate%28-45%29%27%20fill%3D%27%2523b8860b%27/%3E%0A%20%20%3C/g%3E%0A%20%20%3C%21--%203D%20Printer%20outline%20--%3E%0A%20%20%3Cg%20transform%3D%27translate%28560%2C60%29%27%20stroke%3D%27%2523b8860b%27%20fill%3D%27none%27%20stroke-width%3D%275%27%3E%0A%20%20%20%20%3Crect%20x%3D%27-80%27%20y%3D%2720%27%20width%3D%27160%27%20height%3D%27140%27%20rx%3D%278%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27-60%27%20y%3D%2740%27%20width%3D%27120%27%20height%3D%2780%27%20rx%3D%274%27/%3E%0A%20%20%20%20%3Cline%20x1%3D%27-80%27%20y1%3D%27130%27%20x2%3D%2780%27%20y2%3D%27130%27/%3E%0A%20%20%20%20%3Cline%20x1%3D%270%27%20y1%3D%2720%27%20x2%3D%270%27%20y2%3D%27-20%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27-20%27%20y%3D%27-30%27%20width%3D%2740%27%20height%3D%2712%27%20rx%3D%273%27/%3E%0A%20%20%20%20%3C%21--%20Filament%20spool%20--%3E%0A%20%20%20%20%3Ccircle%20cx%3D%27110%27%20cy%3D%2760%27%20r%3D%2728%27/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%27110%27%20cy%3D%2760%27%20r%3D%2714%27/%3E%0A%20%20%20%20%3Cline%20x1%3D%2782%27%20y1%3D%2760%27%20x2%3D%270%27%20y2%3D%2760%27/%3E%0A%20%20%3C/g%3E%0A%20%20%3C%21--%20Wrench%20bottom%20left%20--%3E%0A%20%20%3Cg%20transform%3D%27translate%28180%2C720%29%20rotate%28-30%29%27%20stroke%3D%27%2523b8860b%27%20fill%3D%27none%27%20stroke-width%3D%276%27%3E%0A%20%20%20%20%3Cpath%20d%3D%27M0%2C0%20L0%2C160%27/%3E%0A%20%20%20%20%3Cellipse%20cx%3D%270%27%20cy%3D%270%27%20rx%3D%2728%27%20ry%3D%2722%27/%3E%0A%20%20%20%20%3Cellipse%20cx%3D%270%27%20cy%3D%27160%27%20rx%3D%2718%27%20ry%3D%2714%27/%3E%0A%20%20%20%20%3Cline%20x1%3D%27-28%27%20y1%3D%270%27%20x2%3D%27-28%27%20y2%3D%2740%27/%3E%0A%20%20%20%20%3Cline%20x1%3D%2728%27%20y1%3D%270%27%20x2%3D%2728%27%20y2%3D%2740%27/%3E%0A%20%20%3C/g%3E%0A%20%20%3C%21--%20Ruler%20--%3E%0A%20%20%3Cg%20transform%3D%27translate%28900%2C750%29%20rotate%28-15%29%27%20stroke%3D%27%2523b8860b%27%20fill%3D%27none%27%20stroke-width%3D%274%27%3E%0A%20%20%20%20%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%27260%27%20height%3D%2740%27%20rx%3D%274%27/%3E%0A%20%20%20%20%3Cline%20x1%3D%2720%27%20y1%3D%270%27%20x2%3D%2720%27%20y2%3D%2720%27/%3E%0A%20%20%20%20%3Cline%20x1%3D%2746%27%20y1%3D%270%27%20x2%3D%2746%27%20y2%3D%2714%27/%3E%0A%20%20%20%20%3Cline%20x1%3D%2772%27%20y1%3D%270%27%20x2%3D%2772%27%20y2%3D%2720%27/%3E%0A%20%20%20%20%3Cline%20x1%3D%2798%27%20y1%3D%270%27%20x2%3D%2798%27%20y2%3D%2714%27/%3E%0A%20%20%20%20%3Cline%20x1%3D%27124%27%20y1%3D%270%27%20x2%3D%27124%27%20y2%3D%2722%27/%3E%0A%20%20%20%20%3Cline%20x1%3D%27150%27%20y1%3D%270%27%20x2%3D%27150%27%20y2%3D%2714%27/%3E%0A%20%20%20%20%3Cline%20x1%3D%27176%27%20y1%3D%270%27%20x2%3D%27176%27%20y2%3D%2720%27/%3E%0A%20%20%20%20%3Cline%20x1%3D%27202%27%20y1%3D%270%27%20x2%3D%27202%27%20y2%3D%2714%27/%3E%0A%20%20%20%20%3Cline%20x1%3D%27228%27%20y1%3D%270%27%20x2%3D%27228%27%20y2%3D%2720%27/%3E%0A%20%20%3C/g%3E%0A%20%20%3C%21--%20Caliper%20--%3E%0A%20%20%3Cg%20transform%3D%27translate%2850%2C500%29%27%20stroke%3D%27%2523b8860b%27%20fill%3D%27none%27%20stroke-width%3D%275%27%3E%0A%20%20%20%20%3Crect%20x%3D%270%27%20y%3D%2710%27%20width%3D%27240%27%20height%3D%2718%27%20rx%3D%273%27/%3E%0A%20%20%20%20%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%2718%27%20height%3D%2750%27%20rx%3D%273%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27100%27%20y%3D%270%27%20width%3D%2714%27%20height%3D%2750%27%20rx%3D%273%27/%3E%0A%20%20%20%20%3Cline%20x1%3D%270%27%20y1%3D%2728%27%20x2%3D%27-20%27%20y2%3D%2728%27/%3E%0A%20%20%20%20%3Cline%20x1%3D%270%27%20y1%3D%2728%27%20x2%3D%270%27%20y2%3D%2758%27/%3E%0A%20%20%20%20%3Cline%20x1%3D%27114%27%20y1%3D%2728%27%20x2%3D%27134%27%20y2%3D%2728%27/%3E%0A%20%20%20%20%3Cline%20x1%3D%27114%27%20y1%3D%2728%27%20x2%3D%27114%27%20y2%3D%2758%27/%3E%0A%20%20%3C/g%3E%0A%20%20%3C%21--%20Blueprint%20lines%20scattered%20--%3E%0A%20%20%3Cg%20stroke%3D%27%2523b8860b%27%20fill%3D%27none%27%20stroke-width%3D%272%27%20stroke-dasharray%3D%278%2C6%27%20opacity%3D%270.6%27%3E%0A%20%20%20%20%3Cline%20x1%3D%27300%27%20y1%3D%27200%27%20x2%3D%27500%27%20y2%3D%27200%27/%3E%0A%20%20%20%20%3Cline%20x1%3D%27400%27%20y1%3D%27150%27%20x2%3D%27400%27%20y2%3D%27350%27/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%27400%27%20cy%3D%27200%27%20r%3D%2760%27/%3E%0A%20%20%20%20%3Cline%20x1%3D%27800%27%20y1%3D%27600%27%20x2%3D%271000%27%20y2%3D%27600%27/%3E%0A%20%20%20%20%3Cline%20x1%3D%27900%27%20y1%3D%27550%27%20x2%3D%27900%27%20y2%3D%27700%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27840%27%20y%3D%27550%27%20width%3D%27120%27%20height%3D%27100%27/%3E%0A%20%20%3C/g%3E%0A%20%20%3C%21--%20Hexagons%20%28nuts%29%20--%3E%0A%20%20%3Cg%20stroke%3D%27%2523b8860b%27%20fill%3D%27none%27%20stroke-width%3D%275%27%3E%0A%20%20%20%20%3Cpolygon%20points%3D%271050%2C350%201080%2C334%201110%2C350%201110%2C382%201080%2C398%201050%2C382%27%20/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%271080%27%20cy%3D%27366%27%20r%3D%2716%27/%3E%0A%20%20%20%20%3Cpolygon%20points%3D%27200%2C350%20222%2C338%20244%2C350%20244%2C374%20222%2C386%20200%2C374%27/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%27222%27%20cy%3D%27362%27%20r%3D%2712%27/%3E%0A%20%20%3C/g%3E%0A%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 1200px 900px;
+    pointer-events: none;
+    z-index: 0;
+  }
+  /* Sun */
+  body::after {
+    content: '';
+    position: fixed;
+    top: -100px; left: 50%; transform: translateX(-50%);
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(255,220,60,.7) 0%, rgba(255,160,40,.25) 45%, transparent 70%);
+    pointer-events: none;
+    border-radius: 50%;
+    z-index: 0;
+    animation: sunpulse 6s ease-in-out infinite;
+  }
+  @keyframes sunpulse {
+    0%,100% { opacity:.8; transform:translateX(-50%) scale(1); }
+    50% { opacity:1; transform:translateX(-50%) scale(1.08); }
+  }
+
+  /* All content above bg */
+  body > * { position: relative; z-index: 1; }
+
+  .divider {
+    display:flex; align-items:center; gap:12px;
+    justify-content:center; margin:0 auto 2rem;
+    color:var(--gold); font-size:.78rem; letter-spacing:.22em;
+  }
+  .divider::before, .divider::after {
+    content:''; flex:1; max-width:80px; height:1px;
+    background: linear-gradient(90deg, transparent, var(--gold));
+  }
+  .divider::after { background: linear-gradient(90deg, var(--gold), transparent); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height:100vh;
+    display:flex; flex-direction:column;
+    align-items:center; justify-content:center;
+    text-align:center; padding:100px 24px 70px;
+  }
+  .hero-title-wrap { margin-bottom:1.2rem; }
+  .hero-logo {
+    font-family:'Shippori Mincho',serif;
+    font-size:clamp(1.8rem,5vw,3rem);
+    font-weight:700; color:var(--text-main);
+    letter-spacing:.25em;
+    text-shadow: 0 2px 12px rgba(255,220,80,.8), 0 1px 0 rgba(255,255,255,.6);
+  }
+  .hero-sub-name {
+    font-size:.8rem; letter-spacing:.35em; color:var(--gold);
+    border-top:1px solid var(--border);
+    padding-top:6px; margin-top:4px;
+  }
+  .hero-tagline {
+    font-size:clamp(1.1rem,3.5vw,1.75rem); font-weight:600;
+    color:var(--text-main); letter-spacing:.05em;
+    margin-bottom:1.4rem;
+    text-shadow: 0 1px 6px rgba(255,255,255,.7);
+  }
+  .hero-desc {
+    color:var(--text-sub); font-size:.95rem;
+    max-width:480px; line-height:2;
+    margin-bottom:2rem;
+    background:rgba(255,252,235,.72);
+    padding:16px 22px; border-radius:10px;
+    border:1px solid rgba(184,134,11,.2);
+    backdrop-filter:blur(4px);
+  }
+
+  /* ── Buttons ── */
+  .contact-buttons {
+    display:flex; flex-wrap:wrap; gap:14px; justify-content:center;
+  }
+  .btn {
+    display:inline-flex; align-items:center; gap:10px;
+    padding:12px 22px;
+    border:1.5px solid var(--border);
+    background:rgba(255,252,235,.88);
+    color:var(--text-main);
+    font-family:'Noto Serif JP',serif;
+    font-size:.88rem; letter-spacing:.08em;
+    text-decoration:none;
+    border-radius:50px;
+    box-shadow:0 2px 14px rgba(184,134,11,.14);
+    transition:all .25s;
+    font-weight:600;
+    backdrop-filter:blur(4px);
+  }
+  .btn:hover {
+    background:rgba(255,245,190,.96);
+    box-shadow:0 5px 22px rgba(184,134,11,.28);
+    transform:translateY(-2px);
+  }
+  .btn-icon {
+    width:32px; height:32px; border-radius:8px;
+    overflow:hidden; flex-shrink:0;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .btn-icon img { width:100%; height:100%; object-fit:cover; border-radius:8px; }
+
+  section {
+    padding:60px 24px; max-width:860px; margin:0 auto;
+  }
+  .panel {
+    background:var(--card-bg);
+    border:1px solid var(--border);
+    border-radius:14px; padding:32px;
+    box-shadow:0 2px 18px rgba(184,134,11,.09);
+    backdrop-filter:blur(6px);
+  }
+
+  /* ── About ── */
+  .about-grid {
+    display:grid; grid-template-columns:1fr 1fr; gap:32px; align-items:center;
+  }
+  @media(max-width:600px){ .about-grid{ grid-template-columns:1fr; } }
+  .about-text { color:var(--text-sub); font-size:.95rem; }
+  .about-text p { margin-bottom:1rem; }
+
+  /* ── Services ── */
+  .services-grid {
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:16px;
+  }
+  .service-card {
+    background:var(--card-bg);
+    border:1px solid var(--border);
+    padding:28px 16px; text-align:center;
+    border-radius:14px;
+    box-shadow:0 2px 12px rgba(184,134,11,.08);
+    transition:all .25s;
+  }
+  .service-card:hover { box-shadow:0 6px 24px rgba(184,134,11,.2); transform:translateY(-3px); }
+  .service-icon { font-size:2rem; margin-bottom:12px; }
+  .service-name { font-size:.85rem; color:var(--text-main); letter-spacing:.05em; }
+
+  /* ── Gallery ── */
+  .gallery-grid {
+    display:grid; grid-template-columns:repeat(3,1fr); gap:10px;
+  }
+  @media(max-width:480px){ .gallery-grid{ grid-template-columns:repeat(2,1fr); } }
+  .gallery-item {
+    aspect-ratio:1;
+    background:rgba(255,252,235,.7);
+    border:1px solid var(--border);
+    display:flex; align-items:center; justify-content:center;
+    border-radius:12px; overflow:hidden;
+  }
+  .gallery-item img { width:100%; height:100%; object-fit:cover; display:block; }
+  .gallery-item.fit img { object-fit:contain; padding:8px; }
+
+  /* ── Flow ── */
+  .flow-list { list-style:none; max-width:480px; margin:0 auto; }
+  .flow-list li {
+    display:flex; align-items:flex-start; gap:16px;
+    padding:18px 0;
+    border-bottom:1px solid rgba(184,134,11,.15);
+    color:var(--text-sub); font-size:.95rem;
+  }
+  .flow-num {
+    width:30px; height:30px; flex-shrink:0;
+    border:1.5px solid var(--gold); border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    color:var(--gold); font-size:.75rem;
+    background:rgba(255,252,235,.8);
+  }
+
+  /* ── Pricing ── */
+  .price-table { max-width:420px; margin:0 auto; }
+  .price-row {
+    display:flex; justify-content:space-between;
+    padding:14px 0;
+    border-bottom:1px solid rgba(184,134,11,.15);
+    color:var(--text-sub);
+  }
+  .price-row span:last-child { color:var(--gold); font-weight:600; }
+
+  /* ── Contact ── */
+  .contact-section {
+    background:linear-gradient(180deg,rgba(255,247,210,.75) 0%,rgba(195,232,255,.6) 100%);
+    border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+    padding:60px 24px; text-align:center;
+  }
+  .contact-grid {
+    display:flex; flex-wrap:wrap; gap:32px;
+    justify-content:center; align-items:flex-start;
+    max-width:700px; margin:0 auto;
+  }
+  .contact-block { text-align:center; }
+  .contact-label {
+    font-size:.75rem; letter-spacing:.2em;
+    color:var(--gold-dim); margin-bottom:14px;
+  }
+
+  /* ── Profile ── */
+  .profile-card {
+    background:var(--card-bg);
+    border:1px solid var(--border);
+    border-radius:14px; padding:40px;
+    display:flex; gap:32px; align-items:center;
+    flex-wrap:wrap;
+    box-shadow:0 2px 18px rgba(184,134,11,.1);
+  }
+  .profile-name {
+    font-family:'Shippori Mincho',serif;
+    font-size:1.3rem; color:var(--text-main); margin-bottom:4px;
+  }
+  .profile-sub { color:var(--text-sub); font-size:.85rem; margin-bottom:16px; }
+  .profile-contacts { display:flex; flex-direction:column; gap:10px; }
+
+  footer {
+    text-align:center; padding:32px 24px;
+    color:var(--text-light); font-size:.75rem; letter-spacing:.1em;
+    border-top:1px solid var(--border);
+    background:rgba(255,252,235,.6);
+  }
+
+  .fade-in { opacity:0; transform:translateY(24px); transition:opacity .7s ease,transform .7s ease; }
+  .fade-in.visible { opacity:1; transform:translateY(0); }
+  .bg-sky { background:rgba(195,232,255,.25); }
+  .bg-sand { background:rgba(255,247,210,.35); }
+
+  /* ── Spinning letter animation ── */
+  .spin-char {
+    display: inline-block;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-name: spinY;
+  }
+  @keyframes spinY {
+    0%   { transform: rotateY(0deg);   color: inherit; }
+    20%  { transform: rotateY(180deg); color: inherit; }
+    25%  { transform: rotateY(180deg); color: var(--spin-color, inherit); }
+    45%  { transform: rotateY(360deg); color: var(--spin-color, inherit); }
+    50%  { transform: rotateY(360deg); color: inherit; }
+    100% { transform: rotateY(360deg); color: inherit; }
+  }
+
+  /* ── GGindustry zoom/rotate animation ── */
+  #ggi-sub {
+    overflow: visible;
+    position: relative;
+    height: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #ggi-text {
+    display: inline-block;
+    transform-origin: 38% 50%; /* between d and u in "GGindustry" */
+    will-change: transform;
+    font-weight: 700;
+    letter-spacing: .35em;
+    color: var(--gold);
+    font-size: .8rem;
+  }
+
+  /* ── Bouncing GGi logo ── */
+  #bouncy-logo {
+    position: fixed;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 9999;
+    pointer-events: all;
+    box-shadow: 0 6px 24px rgba(184,134,11,0.5);
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  #bouncy-logo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: block;
+    pointer-events: none;
+  }
+
+</style>
+</head>
+
+<body>
+
+<!-- ═══ HERO ═══ -->
+<div class="hero">
+  <div class="hero-title-wrap">
+    <div class="hero-logo">— <span class="spin-char" id="c1">G</span><span class="spin-char" id="c2">G</span><span class="spin-char" id="c3">工</span><span class="spin-char" id="c4">業</span> —</div>
+    <div class="hero-sub-name" id="ggi-sub">
+  <span id="ggi-text">GGindustry</span>
+</div>
+  </div>
+  <h1 class="hero-tagline">動いた者だけが、次の景色を見る。</h1>
+  <p class="hero-desc">
+    50代から始まった、ものづくりの新境地。<br>
+    3Dプリンター × AutoDesk Fusion × OnlyOne。<br><br>
+    あなたの「困った」を解決します。<br>
+    オーダーメイド制作・修理・カスタム、<br>
+    無いものは智慧を絞って創ります。
+  </p>
+  
+<body>
+
+
+    <a href="./only-one.html" style="display:block; margin:20px auto;">
+        <img
+            src="ggi-home-banner.jpeg.PNG"
+            alt="GG工業｜年輪を重ねて。その未来は無限への道"
+            style="display:block; width:100%; height:auto; border-radius:18px;"
+        >
+    </a>
+
+    
+  <a href="./fusion.html" style="display:block; text-decoration:none;">
+  <img
+    src="./IMG_6768.jpeg"
+    alt="Fusion伴走講座｜講座について知る"
+    style="display:block; width:100%; max-width:700px;
+           height:auto; margin:0 auto 32px; border-radius:16px;"
+  >
+</a>
+  
+<a href=" 13virtues.html  " target="_blank" rel="noopener noreferrer"><img src="./7A066841-7BBF-4114-BD4B-4225C6861239.png" alt="13の徳を学ぶ場 TeamGGi オープンチャット" style="display:block;width:100%;height:auto;margin:24px auto;"></a>
+
+
+
+  <a href="./edo-leather-fan.html" style="display:block; margin:30px auto; max-width:620px;">
+  <img
+    src="./edo-leather-fan-welder.png.PNG"
+    alt="江戸革扇子と溶接職人"
+    style="display:block; width:100%; height:auto;"
+  >
+</a>
+
+  
+  <div class="contact-buttons">
+    <a class="btn" href="https://line.me/ti/p/@858fxigt" target="_blank" rel="noopener">
+      <span class="btn-icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAB4CAYAAAA5ZDbSAAADoklEQVR4nO2dQXbbMAxEYb++9krJQdpDJgdpr5Rs2kUe00SxLJEigBlo/tqWCXwNKTqKdbHJfP/98+/sY56J18fny8zjHT6YhPpyVPjwmyU2llHR3W+S2Fx6RV97Xiy5+fQ62HU2SCwme9K8mWDJxWWPm7uCJRefLUergiWXh3uubgqWXD7WnHVdRQs+vghWenm55e669QLBxdKhpujivAtWeuvw0aUSXJyrmdJbkeZUCS6OBBdHgotzqbr+vjw8db/nx59fDiPJpYTgEZl7YZdOK9hT6hqMsukEZ4hdwiSaRjCC2CUMouEFI4pdgiwaVjCD2CWIoiH3wYxyzTDHDZVgxAaNgpJmmARXkmuGUw+EYJRmzAahrnTBCE3wJLu+VMHZxUeRWWea4LPIbWTVmyL4bHIbGXWHCz6r3EZ0/d9CP60DlH1kD4gnb2iC9zaAUa7Z/nFHnghhgqvLbaBJTt8HC19CBCOuTQhE9AUuwewnA9r43QWPFIzWpL0g1gq7TWKVjIZrgiVpH559gluDxVwkuDhugjU99+HVLyW4OBJcHNhtEuN30ojLkkuCjxbKKNfs+Lg9ThC4KZpVbgNt/HCCxVwkuDhwghEvVHpAGz+cYDO8Ju0Fcdyw2yTEZjECmWAxDwkujgQXR4KL4yIY7dscFjz6pgQXB3abxDgLIG7tIBPMKNcMc9xugkeLRWxSD2h1QyZYzEOCi+MqeGTaQbxQ6QHth8ghE8wqGXHcIT9liFg4Ct4XlZAJFvMIEcy+9fEioi9KcHHCBCvFn4nqR2iCJfmNyD5oii5OuOCzpzi6/pQEn1VyRt1pU/TZJGfVm7oGn0VyZp3pF1nVJWfXly7YLL8JXiDUBSHYDKMZM0GpB/amO1ZQxDZgElzhT4pocs2U4Ckgim1ACGZNL7LYBoRgNhjENtLXYLSb1LY+l0muGWGCW4M/NtpzimcTuiT1+cE9YnobzTQzeEKR4JHGV5Q1AvzDKSXqGLAJltg5QD59VHLnkb5NWiK5cwmfotfSK7E+QCRYcv24mJlF7YWX6ZVYX14fny+66a44Kc8Pltw4Qi+yJDaeq9nbXO35IS8PT5IbTHOq/w8uzrtg7xSLOD66hNgHCz8+CVaK+Vk6/JJgSeblljtN0cW5KVgp5mPN2WqCJZmHe67uTtGSjM+Wo801WJJx2eOmS17mLbbiPz2h67qKVprz6XUwLExpjmU0XIcTKdG+HJ01p0+5En6M2cvgPxnzXJ/IH2s0AAAAAElFTkSuQmCC" alt="LINE"></span>
+      LINEで相談
+    </a>
+    <a class="btn" href="https://lit.link/saitou1967" target="_blank" rel="noopener">
+      <span class="btn-icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAB4CAYAAAA5ZDbSAAAFZklEQVR4nO2dbW8UVRTHz53MR/ALtJY+d2vQRA2pL4gQU6W1FC3UrkgkMfqBACNYaoE+F7qlVIUQIxJqBJWWFmgrfpTlxTJNmZ3nOXdm7tn/L7kvOrN7Tuf+93DOnDls1dk31oiZKrfBBkNxGrNVej0gKC/u/UwluJ3i3RA2G5x9TiSVrVRsnSBsPiQS2raSOQH5UaUYIkfNwRC2WESOZluFfxYgbnEJjWbbCtYP4hafQJGDqmiIaw6+IvtV0RDXPDxFTnMfDAzAKwcjes2lLordVTTENZ/XROboRYMCs7+TBaXlsBfFSXrRwCCcKhoqy6NKRAo5WDi2hRth0SCChWMr5F/JVG0LVbRo0IsWDnKwcFBFCwcRLBzkYOGgFy2cuHPRwDCQg4UTZS4aGEzYXDQwHFTRwkEVLRxEsHCQg4WDKlo4uA8WTmadrO/+72e3ea7pFrtNaahzTTe1hvC3Lz7WaZ6IiM43r2j3YSqWotoIvI6Vhbj0yo/O6zB6XWhaZo/gb158wm0yMt8338zNdxERN9Eh7XrSon5orrBG8Nn/jvmeu/jmsnF+TEddZBT4a59Nv6Rxw/PwaRLa56LHWypa/9kcb6nQmd2BuuOY967BVkV7bTIx2Q5bXpzZHci/gi3A0trJmmhZ8hWA28/p3cG64+jSaa6idVe05Z1BmjywlJt/E7AUVYljecFl22uVd2oRW94ZzMW/KUvr8+CsAmhs59Nc/RcZrRMdumyPbg/l6t8kLIuIOJYXo9tDLLbda7r1erSLwyI1fWCB7WM+sn287thM6yKX+cg+s/BrCtonOka2j9NsW/ab7Qifh+8ioeZa51kT1Ynnw77n5tsWMvGj069pqHlmgYmIhmNsflYsNKjIllJV4l55stg+73l8+Pkw+3UasRbb5rQpMvTshC7TdVx3CRvk2/1ayagbbbNaQ27w2Wc6zRMR0VL7XGzffu+Rhlpq1yuww8BTfqErHeEiBfmN8v4odpISx39SVKV9piHaPceefu57brljNtH7uAjynxa2TlbR10qIiF7vyULcIP8snayVjumGiGCH/q0R33O3OmdCX6Mb53fgQutcdBHXaucMrfpsYv/WSO5PoNivebVjqqEieD8fbZ2M9fqfO6cz8c3pR/3S2bgCExEd3QwX+dcuvg2P6p/LJ9tEh6nrdtdU4Abd7prKxT+X/YbLwV7rToDIRzZPafev0y++LzoCH26eIiKiu93XtNi/232NDj8ZrTvOoQ0imPyjyM3hJ6OZ+meJYEWI4Kj81n018oeBAw5txP3vQk5+77lKH2x8sfdz1nvF4Q8RHICiKt3ruUJ9G2N0r+dKptHr+E8LcjD558C+jTFSRPTHK3F1rb6NMU//PDkYVTQREd0vTdKh9XLd8bz2535pkjgGIvF90SEcWi/Tg9KkNvvve3yoiGpPgjhQD3omEML7eG/9S99za6WfjPOj1koQ2M27j/03Xzd/9vKJS4Tvqiwc3Hqov0qXobAP7zw+nZmvh70TWuyqh73jEDiAt//9SruPR29d1mZbPYLAkTioQei/NQrroP7p/RECCwbfFy0c9KKFg06WcNCLFg7+6opwkIOFg4kO4SCChYMcLBzMRQsHESwc5GDhoIoWDiJYOMjBwkEvWji2VRuAh8oyUcjBwsFEh3AwFy0cp4pGHpaHIkIVLZ7998GIYjnsyYocLBx3FY0oNp/XFPW6D4bI5lJ304u5aOH4VdGIYvPwbFkFPU2CyObgK2NYLxoiF5/AZnOUiQ6IXFxC1Yv6NMkxBKGLQeRHRHEnOhDN+RNLsiRz0YjmfEj0YDfNTBaEzoZUT+w5JjrcvwAETwfrCMZLYtx6yODKCfUAAAAASUVORK5CYII=" alt="リットリンク"></span>
+      リットリンク
+    </a>
+    <a class="btn" href="mailto:GG.55.GOGO@gmail.com">
+      <span class="btn-icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAB4CAYAAAA5ZDbSAAAC1ElEQVR4nO3cQVLjMBRFUTnFHkjRy4RlkGWSglXQA0rUJ3HiyJas/5/umfQETPDNU0IX3VOq7OX187v2NUdyPh2nmtfbfDGCtrU1+OpPJuy+1oYu/iTC9lUa+lDywcTtr7TBQ88Gwvr0yJoXF0xcvx5pczcwcf1banQzMHHjuNdqNjBx47nVrOhdNOK5Csx645prd1j6AMRy2ZAjWtxvYNarw7ZkweIOKbFeRbkpCxZHYHEEFjfx+quNBYsjsDgCiyOwOAKLI7A4AosjsDgCiyOwOAKLI7C46oE/3p/Tx/tz7csOocW9e6p6NSM/0H9vX62+hIyWg2h+RLPm+1rfn2YLtljztb2e+Lu+yWLNP/a8D7ss2Bp5zT2e4N1+TBptzb2+390XbI2w5t5PZBd/0dH7JrTi4fvqumBLac0ewmYuFmx5ujlreHv8bhZsRVyzt7CZy8BZhNBew2bujug5Xm+i18dluV6w5WnNEcJmIRZs9b65vb9+qTALtnqsOVrYLNyCrb1uetS4KQVdsNVyzZHDZqEXbNWOoRA3JYEFWzXWrBI2k1mwtTaSWtyUxBZslaxZMWwmuWBrKZ5y3JQGCJzS3983tn+qx01pkMDZZeQRDBV4RAQWR2BxBBZHYHEEFkdgcQQWR2BxBBZHYHEEFkdgcQQWR2BxBBZHYHEEFkdgcQQWR2BxBBZHYHEEFkdgcQQWR2BxBBZHYHHVA3v4j8oiq33/WLC46eX187vVxUf6d7hbtTr5mgZGfxzR4ggsjsDiCCyOwOIILI7A4ggs7nA+HafeDwJtnE/HiQWLI7A4Aos7pPRzVvd+IKgrN2XB4n4Ds2IdtiULFvcnMCuO77Lh1YKJHNdcO45ocbOBWXE8t5rdXDCR47jX6u4RTWT/lhotvgYT2a9H2hTF43eofSgZXdG7aNbcX2mD1cFY877WjmvzIgnd1tZTs/qRS/Btar8M/gdxjeZJSR3ZfAAAAABJRU5ErkJggg==" alt="メール"></span>
+      メール相談
+    </a>
+  </div>
+</div>
+
+
+
+
+
+<!-- ═══ ABOUT ═══ -->
+<section class="fade-in">
+  <div style="text-align:center;margin-bottom:20px;">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAAEYCAYAAACHjumMAAEAAElEQVR4nOz9d5gd13XmC//23lV1cudGNxqpARAgSJAEc6YISqRysCSTlhzlsceyLNsaOYzu9WeLpP05jDyasT22x3SWkyxSHiVLlkRZzGICiAwQRE4NoHM6qar23vePXVWnGtLcO7aVzXqeBjqcU6dOnap3r/
