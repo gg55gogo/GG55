@@ -141,6 +141,8 @@ footer a { color: #ddd0ae; }
 </section>
 
   <style> 
+
+    
 .stand-preview {
   width: 100%;
   max-width: 490px;
@@ -154,6 +156,26 @@ footer a { color: #ddd0ae; }
   border-radius: 8px;
 }
 
+.stand-preview {
+  position: relative;
+}
+
+.stand-preview::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--stand-color, #006b50);
+
+  -webkit-mask-image: url("../links/images/stand-mask.png");
+  mask-image: url("../links/images/stand-mask.png");
+
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+    
 .color-picker {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -289,9 +311,10 @@ footer a { color: #ddd0ae; }
 
         button.classList.add("selected");
 
-        standPhoto.style.setProperty(
-          "--stand-color",item[1]
-        );
+  standPhoto.parentElement.style.setProperty(
+  "--stand-color",
+  item[1]
+);
 
       });
 
