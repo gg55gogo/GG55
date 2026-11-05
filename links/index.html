@@ -310,26 +310,6 @@ footer a { color: #ddd0ae; }
 })();
 </script>
   
-<script>
-const standPhotos = [
-  "images/04-tableholder.PNG"
-];
-
-let standIndex = 0;
-
-function changeStand(direction) {
-  standIndex =
-    (standIndex + direction + standPhotos.length)
-    % standPhotos.length;
-
-  document.getElementById("standPhoto").src =
-    standPhotos[standIndex];
-
-  document.getElementById("standCount").textContent =
-    `写真 ${standIndex + 1} / ${standPhotos.length}`;
-}
-</script>
-
 
 <section class="product">
   <img src="images/03-wall-stand.png" alt="壁掛けスタンド">
