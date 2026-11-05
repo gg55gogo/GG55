@@ -140,6 +140,51 @@ footer a { color: #ddd0ae; }
 
 </section>
 
+  
+.stand-preview {
+  width: 100%;
+  max-width: 490px;
+  margin: 15px auto;
+  text-align: center;
+}
+
+.stand-preview img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+}
+
+.color-picker {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.color-option {
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  padding: 4px;
+  background: white;
+  cursor: pointer;
+}
+
+.color-option span {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 3px;
+}
+
+.color-option.selected {
+  border: 3px solid #222;
+}
+
+.color-option small {
+  font-size: 10px;
+  color: #333;
+}
+
 
 <style>
 .stand-gallery {
