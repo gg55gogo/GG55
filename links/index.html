@@ -109,38 +109,37 @@ footer a { color: #ddd0ae; }
 </section>
 
 
+
 <section class="product" id="simple-stand">
+
   <h3>02｜簡易スタンド</h3>
 
-  <div class="stand-gallery">
-    <button type="button" onclick="changeStand(-1)">❮</button>
-
+  <div class="stand-preview">
     <img
       id="standPhoto"
-      src="images/04-tableholder.PNG"
-      alt="江戸革扇子 簡易スタンド"
+      src="../links/images/stand_03_green_fan.jpg"
+      alt="千歳緑の江戸革扇子と簡易スタンド"
     >
-
-    <button type="button" onclick="changeStand(1)">❯</button>
   </div>
 
-  <p id="standCount">写真 1 / 1</p>
+  <p id="selectedColor">選択色：No.01 ホワイト</p>
 
   <p>
     江戸革扇子のオリジナルロゴ入り。
-    お好みのカラーをお選びいただけます。
+    <br>
+    扇子は千歳緑で固定。
+    <br>
+    スタンドはお好みの30色から選べます。
   </p>
 
   <h4>選べる30色</h4>
 
-  <img
-    src="images/30色.jpg"
-    alt="簡易スタンド カラーバリエーション30色"
-    class="color-chart"
-  >
+  <div id="colorPicker" class="color-picker"></div>
 
   <p><strong>880円（税込）</strong></p>
+
 </section>
+
 
 <style>
 .stand-gallery {
