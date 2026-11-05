@@ -217,6 +217,100 @@ footer a { color: #ddd0ae; }
 </style>
 
 <script>
+(function () {
+
+  function initColorPicker() {
+
+    const picker = document.getElementById("colorPicker");
+    const standPhoto = document.getElementById("standPhoto");
+    const selectedColor = document.getElementById("selectedColor");
+
+    if (!picker || !standPhoto || !selectedColor) {
+      console.error("色選択に必要なHTMLが見つかりません");
+      return;
+    }
+
+    const colors = [
+      ["ホワイト","#FFFFFF"],
+      ["ブラック","#000000"],
+      ["ダークグレー","#555555"],
+      ["グレー","#888888"],
+      ["ライトグレー","#D3D3D3"],
+      ["シルバー","#AAAAAA"],
+      ["アイボリー","#F3E5DC"],
+      ["ワインレッド","#A51F3B"],
+      ["レッド","#C52B20"],
+      ["マゼンタ","#E6007E"],
+      ["ローズピンク","#E94B79"],
+      ["ピンク","#F05B78"],
+      ["オレンジ","#FF641B"],
+      ["ライトオレンジ","#FF921E"],
+      ["イエロー","#FFC400"],
+      ["レモンイエロー","#F3EB26"],
+      ["ライム","#B5CC00"],
+      ["グリーン","#00AE45"],
+      ["モスグリーン","#388A48"],
+      ["パープル","#542C62"],
+      ["バイオレット","#6042B0"],
+      ["ターコイズ","#08AEB0"],
+      ["ブルー","#078BCB"],
+      ["ロイヤルブルー","#0754B5"],
+      ["ネイビー","#202D82"],
+      ["ブルーグレー","#626B80"],
+      ["オリーブ","#85834C"],
+      ["ブラウン","#795333"],
+      ["テラコッタ","#A4472F"],
+      ["ゴールド","#E5BE70"]
+    ];
+
+    picker.innerHTML = "";
+
+    colors.forEach((item,index) => {
+
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "color-option";
+
+      button.innerHTML =
+        '<span style="background:'+item[1]+'"></span>' +
+        '<small>No.'+String(index+1).padStart(2,"0")+'</small>' +
+        '<small>'+item[0]+'</small>';
+
+      button.addEventListener("click", function() {
+
+        selectedColor.textContent =
+          "選択色：No."+
+          String(index+1).padStart(2,"0")+
+          " "+item[0];
+
+        picker.querySelectorAll("button").forEach(b =>
+          b.classList.remove("selected")
+        );
+
+        button.classList.add("selected");
+
+        standPhoto.style.setProperty(
+          "--stand-color",item[1]
+        );
+
+      });
+
+      picker.appendChild(button);
+    });
+
+    picker.querySelector("button").click();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded",initColorPicker);
+  } else {
+    initColorPicker();
+  }
+
+})();
+</script>
+  
+<script>
 const standPhotos = [
   "images/04-tableholder.PNG"
 ];
