@@ -108,11 +108,91 @@ footer a { color: #ddd0ae; }
   <p>メーカー専用ケースとスタンドのセットです。</p>
 </section>
 
-<section class="product">
-  <img src="images/04-table-holder.PNG" alt="簡易スタンド">
+
+<section class="product" id="simple-stand">
   <h3>02｜簡易スタンド</h3>
-  <p>江戸革扇子のオリジナルロゴ入りスタンドです。</p>
+
+  <div class="stand-gallery">
+    <button type="button" onclick="changeStand(-1)">❮</button>
+
+    <img
+      id="standPhoto"
+      src="images/04-tableholder.PNG"
+      alt="江戸革扇子 簡易スタンド"
+    >
+
+    <button type="button" onclick="changeStand(1)">❯</button>
+  </div>
+
+  <p id="standCount">写真 1 / 1</p>
+
+  <p>
+    江戸革扇子のオリジナルロゴ入り。
+    お好みのカラーをお選びいただけます。
+  </p>
+
+  <h4>選べる30色</h4>
+
+  <img
+    src="images/30-colors.png"
+    alt="簡易スタンド カラーバリエーション30色"
+    class="color-chart"
+  >
+
+  <p><strong>880円（税込）</strong></p>
 </section>
+
+<style>
+.stand-gallery {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.stand-gallery img {
+  width: 100%;
+  min-width: 0;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: #f1f0ec;
+}
+.stand-gallery button {
+  padding: 10px;
+  font-size: 22px;
+  cursor: pointer;
+}
+.color-chart {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+#standCount {
+  text-align: center;
+  color: #777;
+  font-size: 13px;
+}
+</style>
+
+<script>
+const standPhotos = [
+  "images/04-tableholder.PNG"
+];
+
+let standIndex = 0;
+
+function changeStand(direction) {
+  standIndex =
+    (standIndex + direction + standPhotos.length)
+    % standPhotos.length;
+
+  document.getElementById("standPhoto").src =
+    standPhotos[standIndex];
+
+  document.getElementById("standCount").textContent =
+    `写真 ${standIndex + 1} / ${standPhotos.length}`;
+}
+</script>
+
 
 <section class="product">
   <img src="images/03-wall-stand.png" alt="壁掛けスタンド">
