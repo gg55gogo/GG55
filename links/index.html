@@ -4,7 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>江戸革扇子｜GG工業 ORIGINAL COLLECTION</title>
+
+<title>和治1603.jp｜ORIGINAL COLLECTION</title>
 
 <style>
 * {
@@ -29,6 +30,7 @@ header {
 header h1 {
   font-size: 29px;
   margin: 0;
+  letter-spacing: 2px;
 }
 
 header p {
@@ -114,170 +116,132 @@ footer a {
   color: #ddd0ae;
 }
 
-/* 簡易スタンド */
-
-.stand-preview {
-  position: relative;
-  width: 100%;
-  max-width: 490px;
-  margin: 15px auto;
-  text-align: center;
-  overflow: hidden;
-  border-radius: 8px;
-
-  --stand-color: #FFFFFF;
+.brand-name {
+  color: #a18450;
+  letter-spacing: 2px;
 }
 
-.stand-preview img {
+.production-credit {
+  margin-top: 22px;
+  padding-top: 15px;
+  border-top: 1px solid #c9c1b3;
+  font-size: 13px;
+  color: #666;
+}
+
+/* 01 縦型スタンド */
+
+#vertical-stand img {
   width: 100%;
   height: auto;
+  max-width: 100%;
+  object-fit: contain;
   display: block;
-  border-radius: 8px;
 }
 
-/* スタンド部分だけを着色 */
+/* 02 簡易スタンド：標準カラー9色 */
 
-.stand-preview::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-
-  background-color: var(--stand-color);
-
-  -webkit-mask-image: url("../links/images/stand-mask-alpha.png");
-  mask-image: url("../links/images/stand-mask-alpha.png");
-
-  -webkit-mask-size: 100% 100%;
-  mask-size: 100% 100%;
-
-  -webkit-mask-position: center;
-  mask-position: center;
-
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-
-  mix-blend-mode: color;
-  opacity: 0.95;
-
-  pointer-events: none;
-}
-
-/* 色選択エリア */
-
-.color-picker {
+.color-list {
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 10px;
-  margin: 15px 0;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin: 22px 0;
 }
 
-.color-option {
-  min-width: 0;
-  border: 2px solid #ddd;
-  border-radius: 7px;
-  padding: 5px 3px;
-  background: white;
-  cursor: pointer;
-  color: #333;
-  font-family: inherit;
-  transition: border 0.15s;
+.color-item {
+  text-align: center;
+  font-size: 13px;
 }
 
-.color-option span {
-  display: block;
+.color-swatch {
   width: 100%;
   aspect-ratio: 1;
-  border-radius: 4px;
-  border: 1px solid #00000010;
+  max-width: 85px;
+  margin: 0 auto 7px;
+  border-radius: 8px;
+  border: 1px solid #dddddd;
+  box-shadow: 0 2px 5px #00000012;
 }
 
-.color-option small {
+.color-number {
   display: block;
-  font-size: 10px;
-  line-height: 1.5;
-  overflow-wrap: anywhere;
+  font-size: 11px;
+  color: #777;
 }
 
-.color-option.selected {
-  border: 3px solid #222;
-  background: #f5f2eb;
-}
-
-.color-option:focus-visible {
-  outline: 2px solid #263b49;
-  outline-offset: 2px;
-}
-
-#selectedColor {
-  text-align: center;
+.color-name {
+  display: block;
   font-weight: bold;
-  font-size: 17px;
-  margin: 12px 0;
 }
 
 .stand-price {
   text-align: center;
-  font-size: 20px;
+  font-size: 22px;
+  margin-top: 20px;
+}
+
+.stand-concept {
+  text-align: center;
+  padding: 15px;
+  background: #f7f5f0;
+  border-radius: 8px;
   margin-top: 20px;
 }
 
 @media (max-width: 420px) {
-  .color-picker {
-    gap: 7px;
+  .color-list {
+    gap: 10px;
   }
 
-  .color-option small {
-    font-size: 9px;
+  .color-item {
+    font-size: 12px;
+  }
+
+  .color-swatch {
+    max-width: 75px;
   }
 }
-
-/* 01 縦型スタンド画像サイズ */
-#vertical-stand img {
-    width: 100%;
-    height: auto !important;
-    max-width: 100%;
-    object-fit: contain;
-    display: block;
-}
-  
 </style>
-  
+
 </head>
 
 <body>
 
 <header>
-  <p>GG工業 ORIGINAL COLLECTION</p>
-  <h1>江戸革扇子</h1>
-  <p>伝統と未来をつなぐ、日本の手仕事。</p>
+  <p>和治1603.jp</p>
+  <h1>ORIGINAL COLLECTION</h1>
+  <p>和心を、未来へ。</p>
 </header>
 
 <main>
 
 <section class="intro">
-  <h2>GG工業 オリジナル商品</h2>
-  江戸の伝統技術と現代のものづくりをつなぐ。
+  <h2>和治1603.jp オリジナル商品</h2>
+  一本の扇子から広がる、日本の美意識。
   <br>
-  GG工業が企画するオリジナル商品をご紹介します。
+  伝統と現代のものづくりをつなぐ商品をご紹介します。
 </section>
 
 <h2>ORIGINAL PRODUCTS</h2>
 
-<!-- 01 メーカー専用ケーススタンド -->
 
-  <section class="product" id="vertical-stand">
+<!-- 01 メーカー専用 縦型スタンド -->
+
+<section class="product" id="vertical-stand">
 
   <img src="images/01-vertical-stand.jpeg.PNG"
        alt="メーカー専用 縦型スタンド">
 
   <h3>01｜メーカー専用 縦型スタンド</h3>
 
-  <p>江戸革扇子を美しく、上質に飾る専用スタンドです。</p>
+  <p>
+    江戸革扇子を美しく、上質に飾る専用スタンドです。
+  </p>
 
   <p>販売価格：2,200円（税込）</p>
 
-    
 </section>
+
 
 <!-- 02 簡易スタンド -->
 
@@ -285,104 +249,172 @@ footer a {
 
   <h3>02｜簡易スタンド</h3>
 
-  <div class="stand-preview" id="standPreview">
+  <img src="../links/images/stand-base.PNG"
+       alt="千歳緑の扇子と簡易スタンド">
 
-    <img
-      id="standPhoto"
-      src="../links/images/stand-base.PNG"
-      alt="千歳緑の江戸革扇子と簡易スタンド"
-    >
+  <p>
+    シンプルなデザインで、扇子を手軽に飾れる卓上スタンドです。
+    <br>
+    オリジナルロゴ入り。
+  </p>
+
+  <h4>■ 標準カラー9色</h4>
+
+  <div class="color-list">
+
+    <div class="color-item">
+      <div class="color-swatch" style="background:#FFFFFF;"></div>
+      <span class="color-number">No.01</span>
+      <span class="color-name">ホワイト</span>
+    </div>
+
+    <div class="color-item">
+      <div class="color-swatch" style="background:#000000;"></div>
+      <span class="color-number">No.02</span>
+      <span class="color-name">ブラック</span>
+    </div>
+
+    <div class="color-item">
+      <div class="color-swatch" style="background:#795333;"></div>
+      <span class="color-number">No.03</span>
+      <span class="color-name">ブラウン</span>
+    </div>
+
+    <div class="color-item">
+      <div class="color-swatch" style="background:#C52B20;"></div>
+      <span class="color-number">No.04</span>
+      <span class="color-name">レッド</span>
+    </div>
+
+    <div class="color-item">
+      <div class="color-swatch" style="background:#078BCB;"></div>
+      <span class="color-number">No.05</span>
+      <span class="color-name">ブルー</span>
+    </div>
+
+    <div class="color-item">
+      <div class="color-swatch" style="background:#263D32;"></div>
+      <span class="color-number">No.06</span>
+      <span class="color-name">深緑</span>
+    </div>
+
+    <div class="color-item">
+      <div class="color-swatch" style="background:#414247;"></div>
+      <span class="color-number">No.07</span>
+      <span class="color-name">チャコールグレー</span>
+    </div>
+
+    <div class="color-item">
+      <div class="color-swatch" style="background:#E9DFC9;"></div>
+      <span class="color-number">No.08</span>
+      <span class="color-name">アイボリー</span>
+    </div>
+
+    <div class="color-item">
+      <div class="color-swatch" style="background:#F08BAA;"></div>
+      <span class="color-number">No.09</span>
+      <span class="color-name">ピンク</span>
+    </div>
 
   </div>
 
-  <p id="selectedColor">
-    選択色：No.01 ホワイト
-  </p>
-
-  <p>
-    江戸革扇子のオリジナルロゴ入り。
-    <br>
-    扇子は千歳緑で固定。
-    <br>
-    スタンドはお好みの30色から選べます。
-  </p>
-
-  <h4>選べる30色</h4>
-
-  <div id="colorPicker" class="color-picker"></div>
+  <div class="stand-concept">
+    <strong>9色に込めた「九次元」</strong>
+    <p>
+      地球と宇宙のリズムを感じる、
+      和治1603.jpの標準カラー。
+    </p>
+  </div>
 
   <p class="stand-price">
     <strong>880円（税込）</strong>
   </p>
 
+</section>
+
+
 <!-- 03 GGi 2WAYスタンド -->
 
-<section class="product">
+<section class="product" id="two-way-stand">
 
-    <img src="images/03-2way-stand.PNG"
-         alt="GGi 2WAYスタンド">
+  <img src="images/03-2way-stand.PNG"
+       alt="2WAYスタンド">
 
-    <h3>03｜GGi 2WAYスタンド</h3>
+  <h3>03｜2WAYスタンド</h3>
 
-    <p>
-      江戸革扇子を壁掛けでも卓上でも
-      美しく飾ることができる2WAYスタンドです。
-    </p>
+  <p>
+    壁掛けスタンドと専用ベースの組み合わせで、
+    壁掛け・卓上の2通りの飾り方ができます。
+  </p>
 
-    <p>
-      【セット特別価格】1,980円（税込）<br>
-      壁掛けスタンド単品 1,320円（税込）<br>
-      卓上用ベース単品 880円（税込）
-    </p>
+  <h4>■ 販売価格</h4>
 
-    <p>
-      セットでも、単品でもお求めいただけます。
-    </p>
+  <p>
+    壁掛けスタンド単品：1,320円（税込）<br>
+    卓上用ベース単品：880円（税込）
+  </p>
+
+  <p>
+    <strong>セット特別価格：1,980円（税込）</strong>
+    <br>
+    <span style="color:#8b6e43;">
+      単品合計2,200円より220円お得
+    </span>
+  </p>
+
+  <p>
+    セットでも、単品でもお求めいただけます。
+  </p>
 
 </section>
 
+
 <!-- 04 オリジナルケース -->
 
-<section class="product">
+<section class="product" id="original-case">
 
-    <img src="images/05-original-case.PNG"
-         alt="和治1603Japan オリジナルケース">
+  <img src="images/05-original-case.PNG"
+       alt="和治1603Japan オリジナルケース">
 
-    <h3>04｜和治1603Japan オリジナルケース</h3>
+  <h3>04｜和治1603Japan オリジナルケース</h3>
 
-    <p>
-      和治1603Japan オリジナルケース。
-      サイズは7.5寸用と7寸用の2種類です。
-    </p>
+  <p>
+    和治1603Japan オリジナルケース。
+    サイズは7.5寸用と7寸用の2種類です。
+  </p>
 
-    <h4>■ ケース本体</h4>
+  <h4>■ ケース本体</h4>
 
-    <p>
-      7.5寸用：φ32 × 250mm<br>
-      7寸用：φ32 × 235mm
-    </p>
+  <p>
+    7.5寸用：外径φ32 × 全長250mm<br>
+    7寸用：外径φ32 × 全長235mm
+  </p>
 
-    <p>
-      本体価格：1,650円（税込）
-    </p>
+  <p>
+    本体価格：1,650円（税込）
+  </p>
 
-    <h4>■ 刻印オプション</h4>
+  <h4>■ 刻印オプション</h4>
 
-    <p>
-      天面：1文字 ＋550円（税込）<br>
-      底面：色単位 ＋550円（税込）<br>
-      キャップ側面：＋550円（税込）
-    </p>
+  <p>
+    天面：1文字 ＋550円（税込）<br>
+    底面：色単位 ＋550円（税込）<br>
+    キャップ側面：＋550円（税込）
+  </p>
 
-    <p>
-      刻印は天面・底面・側面に対応。
-      アレンジにより4文字までの表現も可能です。
-    </p>
+  <p>
+    天面・底面への文字入れに対応。
+    <br>
+    アレンジにより4文字までの表現も可能です。
+    <br>
+    キャップ側面にも刻印できます。
+  </p>
 
-    <p>
-      ※刻印の組み合わせや仕様については
-      お問い合わせください。
-    </p>
+  <p>
+    ※各箇所の刻印は、それぞれ550円（税込）です。
+    <br>
+    ※刻印の組み合わせや仕様についてはお問い合わせください。
+  </p>
 
 </section>
 
@@ -399,10 +431,10 @@ footer a {
     既製品の購入サイト
   </a>
 
-  <p>GG工業オリジナル商品の見積もり・お問い合わせ</p>
+  <p>和治1603.jp オリジナル商品の見積もり・お問い合わせ</p>
 
   <a class="button email"
-     href="mailto:kazuhau2027@gmail.com?subject=GG工業オリジナル商品の見積もり依頼">
+     href="mailto:kazuhau2027@gmail.com?subject=和治1603.jpオリジナル商品の見積もり依頼">
     メールでお問い合わせ
   </a>
 
@@ -420,18 +452,25 @@ footer a {
 
   <h3>発送方法</h3>
 
-  <p>発送方法・送料はご注文内容に応じてご相談となります。</p>
+  <p>
+    発送方法・送料はご注文内容に応じてご相談となります。
+  </p>
 
 </section>
+
+
+<div class="production-credit">
+  企画・設計・制作：GG工業（GGi）
+</div>
 
 </main>
 
 
 <footer>
 
-  GG工業
+  和治1603.jp
   <br>
-  伝統と未来をつなぐ。
+  和心を、未来へ。
 
   <p>
     <a href="https://gg55gogo.github.io/GG55/">
@@ -440,139 +479,6 @@ footer a {
   </p>
 
 </footer>
-
-
-<script>
-
-(function () {
-
-  function initColorPicker() {
-
-    const picker = document.getElementById("colorPicker");
-    const preview = document.getElementById("standPreview");
-    const selectedColor = document.getElementById("selectedColor");
-
-    if (!picker || !preview || !selectedColor) {
-      console.error("色選択に必要なHTMLが見つかりません");
-      return;
-    }
-
-    const colors = [
-
-      ["ホワイト","#FFFFFF"],
-      ["ブラック","#000000"],
-      ["ダークグレー","#555555"],
-      ["グレー","#888888"],
-      ["ライトグレー","#D3D3D3"],
-      ["シルバー","#AAAAAA"],
-
-      ["アイボリー","#F3E5DC"],
-      ["ワインレッド","#A51F3B"],
-      ["レッド","#C52B20"],
-      ["マゼンタ","#E6007E"],
-      ["ローズピンク","#E94B79"],
-      ["ピンク","#F05B78"],
-
-      ["オレンジ","#FF641B"],
-      ["ライトオレンジ","#FF921E"],
-      ["イエロー","#FFC400"],
-      ["レモンイエロー","#F3EB26"],
-      ["ライム","#B5CC00"],
-      ["グリーン","#00AE45"],
-
-      ["モスグリーン","#388A48"],
-      ["パープル","#542C62"],
-      ["バイオレット","#6042B0"],
-      ["ターコイズ","#08AEB0"],
-      ["ブルー","#078BCB"],
-      ["ロイヤルブルー","#0754B5"],
-
-      ["ネイビー","#202D82"],
-      ["ブルーグレー","#626B80"],
-      ["オリーブ","#85834C"],
-      ["ブラウン","#795333"],
-      ["テラコッタ","#A4472F"],
-      ["ゴールド","#E5BE70"]
-
-    ];
-
-    picker.innerHTML = "";
-
-    colors.forEach(function(item, index) {
-
-      const button = document.createElement("button");
-
-      button.type = "button";
-      button.className = "color-option";
-
-      const number = String(index + 1).padStart(2, "0");
-
-      const colorSample = document.createElement("span");
-      colorSample.style.backgroundColor = item[1];
-
-      const numberLabel = document.createElement("small");
-      numberLabel.textContent = "No." + number;
-
-      const nameLabel = document.createElement("small");
-      nameLabel.textContent = item[0];
-
-      button.appendChild(colorSample);
-      button.appendChild(numberLabel);
-      button.appendChild(nameLabel);
-
-      button.setAttribute(
-        "aria-label",
-        "No." + number + " " + item[0]
-      );
-
-      button.addEventListener("click", function() {
-
-        // 選択色を表示
-        selectedColor.textContent =
-          "選択色：No." + number + " " + item[0];
-
-        // スタンドの色を変更
-        preview.style.setProperty(
-          "--stand-color",
-          item[1]
-        );
-
-        // 選択状態を更新
-        picker.querySelectorAll(".color-option").forEach(function(b) {
-          b.classList.remove("selected");
-          b.setAttribute("aria-pressed", "false");
-        });
-
-        button.classList.add("selected");
-        button.setAttribute("aria-pressed", "true");
-
-      });
-
-      picker.appendChild(button);
-
-    });
-
-    // 初期表示はNo.01 ホワイト
-    picker.querySelector(".color-option").click();
-
-  }
-
-  if (document.readyState === "loading") {
-
-    document.addEventListener(
-      "DOMContentLoaded",
-      initColorPicker
-    );
-
-  } else {
-
-    initColorPicker();
-
-  }
-
-})();
-
-</script>
 
 </body>
 </html>
